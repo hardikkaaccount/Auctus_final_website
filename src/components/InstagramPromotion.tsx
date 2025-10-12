@@ -9,7 +9,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 // Import images
 import event1 from "@/assets/gallery/event-1.jpg";
-import event2 from "@/assets/gallery/event-2.JPG";
+import event2 from "@/assets/gallery/event-2.jpg";
 import event3 from "@/assets/gallery/event-3.jpg";
 import event4 from "@/assets/gallery/event-4.jpg";
 import event5 from "@/assets/gallery/event-5.jpg";
