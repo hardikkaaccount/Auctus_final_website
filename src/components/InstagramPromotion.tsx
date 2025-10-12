@@ -1,9 +1,10 @@
 import { Instagram } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselApi,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -14,15 +15,34 @@ import event3 from "@/assets/gallery/event-3.jpg";
 import event4 from "@/assets/gallery/event-4.jpg";
 import event5 from "@/assets/gallery/event-5.jpg";
 import event6 from "@/assets/gallery/event-6.jpg";
-import event7 from "@/assets/gallery/event-7.png";
+import event7 from "@/assets/gallery/event-7.jpg";
 import event8 from "@/assets/gallery/event-8.jpg";
+import event9 from "@/assets/gallery/event-9.jpg";
+import event10 from "@/assets/gallery/event-10.jpg";
+import event11 from "@/assets/gallery/event-11.jpg";
 
-const images = [event1, event2, event3, event4, event5, event6, event7, event8];
+const images = [event1, event2, event3, event4, event5, event6, event7, event8, event9, event10, event11];
 
 const InstagramPromotion = () => {
   const plugin = useRef(
     Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })
   );
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
 
   return (
     <section className="w-full bg-gradient-to-br from-card/40 via-card/20 to-background border-t border-border py-16 overflow-hidden">
@@ -38,6 +58,7 @@ const InstagramPromotion = () => {
                 align: "start",
                 loop: true,
               }}
+              setApi={setApi}
             >
               <CarouselContent>
                 {images.map((image, index) => (
@@ -54,6 +75,22 @@ const InstagramPromotion = () => {
                 ))}
               </CarouselContent>
             </Carousel>
+            
+            {/* Dot Indicators */}
+            <div className="flex justify-center mt-4 space-x-2">
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => api?.scrollTo(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    current === index + 1 
+                      ? "bg-primary w-6" 
+                      : "bg-muted hover:bg-primary/50"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Right: Content */}
