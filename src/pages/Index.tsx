@@ -6,10 +6,12 @@ import RegistrationSection from "@/components/RegistrationSection";
 import InstagramPromotion from "@/components/InstagramPromotion";
 import Footer from "@/components/Footer";
 import InteractiveBackground from "@/components/InteractiveBackground";
+import SEO from "@/components/SEO";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background relative">
+      <SEO />
       <InteractiveBackground />
       <div className="relative z-10">
         <Navbar />

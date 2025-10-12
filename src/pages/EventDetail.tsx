@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Calendar, Clock, Users, ArrowLeft, ExternalLink, Ticket } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import inaugurationImg from "@/assets/inauguration-workshop.png";
 import vlsiImg from "@/assets/vlsi-workshop.png";
 import relayathonImg from "@/assets/relayathon.png";
@@ -185,6 +186,10 @@ const EventDetail = () => {
   if (!event) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
+        <SEO 
+          title="Event Not Found" 
+          description="The requested event could not be found on the IEEE PESCE Student Branch website."
+        />
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Event Not Found</h1>
           <Button onClick={() => navigate("/")}>Go Back Home</Button>
@@ -193,8 +198,43 @@ const EventDetail = () => {
     );
   }
 
+  // Structured data for the event
+  const eventStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": event.title,
+    "startDate": event.date,
+    "description": event.description.substring(0, 160) + "...",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "PES College of Engineering",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Mandya - Mysore Road",
+        "addressLocality": "Mandya",
+        "postalCode": "571401",
+        "addressRegion": "Karnataka",
+        "addressCountry": "IN"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "IEEE PESCE Student Branch",
+      "url": "https://ieee.pesce.ac.in/"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
+      <SEO 
+        title={event.title}
+        description={event.description.substring(0, 160) + "..."}
+        url={`https://ieee.pesce.ac.in/event/${event.id}`}
+        type="article"
+        structuredData={eventStructuredData}
+      />
       {/* Animated Canvas Background */}
       <canvas
         ref={canvasRef}
