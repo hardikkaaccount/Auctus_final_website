@@ -20,7 +20,7 @@ const HeroSection = () => {
       <div className="text-center space-y-6 sm:space-y-8 animate-fade-in">
           {/* IEEE Presents */}
           <p className="text-sm sm:text-base text-muted-foreground tracking-wider uppercase">
-            IEEE-PESCE Presents
+            IEEE - PESCE Presents
           </p>
 
           {/* Main Title */}
