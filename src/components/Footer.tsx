@@ -63,7 +63,7 @@ const Footer = () => {
               © {currentYear} IEEE PESCE SB, Mandya. All rights reserved.
             </p>
             <p className="text-xs text-muted-foreground/70">
-              Designed with ❤️ by{" "}
+              Designed by{" "}
               <a
                 href="https://www.linkedin.com/in/ashwin-s-5184a3298/"
                 target="_blank"
