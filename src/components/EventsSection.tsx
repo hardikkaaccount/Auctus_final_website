@@ -78,11 +78,11 @@ const EventsSection = () => {
     },
     {
       id: "industry-webinar",
-      title: "Industry Expert Webinar",
+      title: "Job First or Startup First? - Webinar",
       date: "Wednesday, 29th October 2025",
       time: "6:30 PM – 7:30 PM",
       details: "Insights from industry leaders.",
-      description: "Join us for an exclusive online webinar featuring a special guest—an esteemed member of the IEEE CAS Society. The identity of the speaker will be revealed on the day of the event, adding an element of surprise! This session promises a wealth of knowledge, insights, and guidance straight from the industry. Whether you're aiming to understand cutting-edge technologies, explore career paths, or gain practical tips for success, this webinar is your gateway to learning from the best. Don't miss this opportunity to connect with an expert and gain valuable knowledge that could shape your future!",
+      description: "Join us for an exclusive online webinar featuring Mr. Vinod Sharma, an esteemed member of the IEEE CAS Society and an inspiring industry expert. The session titled 'Job First or Startup First?' will explore real-world perspectives on choosing between a secure job and launching your own startup. Discover the pros, cons, and success strategies from someone who has been there and done that! 💼🚀\n\nSpeaker: Vinod Sharma\nLinkedIn: https://www.linkedin.com/in/vinodsharma10x/\n\nThis session promises a wealth of knowledge, insights, and guidance straight from the industry. Whether you're aiming to understand cutting-edge technologies, explore career paths, or gain practical tips for success, this webinar is your gateway to learning from the best. Don't miss this opportunity to connect with an expert and gain valuable knowledge that could shape your future!",
       eligibility: "Open to all PESCE college students",
       entryFee: "No Fee",
       form: "https://forms.gle/EbyUV9PViaUynL1B6",
