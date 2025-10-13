@@ -10,7 +10,7 @@ const EventsSection = () => {
   const events = [
     {
       id: "inauguration-workshop",
-      title: "Inauguration & IEEE Opportunities Workshop",
+      title: "Inauguration & Exploring IEEE: Benefits and Global Opportunities",
       date: "Thursday, October 23, 2025",
       time: "2:45 PM - 4:30 PM",
       details: "Kickstart the flagship event 'Auctus', a week-long technical fest by IEEE PESCE SB",
