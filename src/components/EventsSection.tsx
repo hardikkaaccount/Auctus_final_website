@@ -10,7 +10,7 @@ const EventsSection = () => {
   const events = [
     {
       id: "inauguration-workshop",
-      title: "Inauguration & Special Workshop",
+      title: "Inauguration & IEEE Opportunities Workshop",
       date: "Thursday, October 23, 2025",
       time: "2:45 PM - 4:30 PM",
       details: "Kickstart the flagship event 'Auctus', a week-long technical fest by IEEE PESCE SB",
@@ -80,7 +80,7 @@ const EventsSection = () => {
       id: "industry-webinar",
       title: "Industry Expert Webinar",
       date: "Wednesday, 29th October 2025",
-      time: "2:45 PM – 4:45 PM",
+      time: "6:30 PM – 7:30 PM",
       details: "Insights from industry leaders.",
       description: "Join us for an exclusive online webinar featuring a special guest—an esteemed member of the IEEE CAS Society. The identity of the speaker will be revealed on the day of the event, adding an element of surprise! This session promises a wealth of knowledge, insights, and guidance straight from the industry. Whether you're aiming to understand cutting-edge technologies, explore career paths, or gain practical tips for success, this webinar is your gateway to learning from the best. Don't miss this opportunity to connect with an expert and gain valuable knowledge that could shape your future!",
       eligibility: "Open to all PESCE college students",
